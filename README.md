@@ -1,4 +1,4 @@
 api-ai-cordova-sample
 =====================
 
-Sample api.ai w/ cordova
+Sample Cordova application with [api.ai](http://api.ai) service integration.
