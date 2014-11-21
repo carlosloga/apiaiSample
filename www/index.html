@@ -86,20 +86,17 @@
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             
-            ApiAIPlugin.levelMeterCallback(function(level) {console.log(1)});
-            
             function sendText() {
                 try {
-                    ApiAIPlugin.requestText(function (responce) {
-                                            alert(JSON.stringify(responce));
+                    ApiAIPlugin.requestText({
+                                                query: "Hello"
+                                            },
+                                            function (responce) {
+                                                alert(JSON.stringify(responce));
                                             },
                                             function (error) {
-                                            alert("ooops!");
-                                            },
-                                            {
-                                            query: "Hello"
-                                            }
-                                            );
+                                                alert("ooops!");
+                                            });
 
                 } catch (e) {
                     alert(e);
@@ -118,33 +115,32 @@
                     var corcles = [circle1, circle2, circle3];
                     
                     ApiAIPlugin.levelMeterCallback(function(level){
-                                                   transform = "scale3d(" + (level + 1.0) + ", " + (level + 1.0) + ", " + (level + 1.0) + ")";
-                                                   
-                                                   
-                                                   circle1.style.transform = transform;
-                                                   circle1.style.webkitTransform = transform;
-                                                   
-                                                   circle2.style.transform = transform;
-                                                   circle2.style.webkitTransform = transform;
-                                                   
-                                                   circle3.style.transform = transform;
-                                                   circle3.style.webkitTransform = transform;
-                                                   
-                                                   console.log(transform);
+                                                
+                                                       transform = "scale3d(" + (level + 1.0) + ", " + (level + 1.0) + ", " + (level + 1.0) + ")";
+
+                                                       circle1.style.transform = transform;
+                                                       circle1.style.webkitTransform = transform;
+                                                       
+                                                       circle2.style.transform = transform;
+                                                       circle2.style.webkitTransform = transform;
+                                                       
+                                                       circle3.style.transform = transform;
+                                                       circle3.style.webkitTransform = transform;
+                                                       
+                                                       console.log(transform);
                                                    });
                     
-                    ApiAIPlugin.requestVoice(function (responce) {
+                    ApiAIPlugin.requestVoice({
+                                                lang:"en"
+                                             },
+                                            function (responce) {
                                                 alert(JSON.stringify(responce));
                                                 parentElement.setAttribute('style', 'display:none;');
                                             },
                                             function (error) {
                                                 parentElement.setAttribute('style', 'display:none;');
-                                                 alert("ooops!");
-                                            },
-                                            {
-                                             lang:"en"
-                                            }
-                                            );
+                                                alert("ooops!");
+                                            });
                                             
                 } catch (e) {
                     alert(e);

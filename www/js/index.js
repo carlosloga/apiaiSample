@@ -35,9 +35,8 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
         
-        ApiAIPlugin.init("https://api.api.ai/v1",
-                         "417a7fbdda844ac1ae922d10d4c4e4be",
-                         "6123ebe7185a4d9e94e441b7959cf2bc");
+        ApiAIPlugin.init("6123ebe7185a4d9e94e441b7959cf2bc",
+            "417a7fbdda844ac1ae922d10d4c4e4be");
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
