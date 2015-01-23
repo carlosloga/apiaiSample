@@ -35,8 +35,13 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
         
-        ApiAIPlugin.init("6123ebe7185a4d9e94e441b7959cf2bc",
-            "417a7fbdda844ac1ae922d10d4c4e4be", 
+        ApiAIPlugin.init(
+            {
+                subscriptionKey: "6123ebe7185a4d9e94e441b7959cf2bc",
+                clientAccessToken: "4040f29a2bda474f873dedf16c637afb",
+                lang: "ru",
+                debug: true
+            },
             function () {
                 alert("Init success");
             },
