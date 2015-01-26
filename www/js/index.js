@@ -38,7 +38,7 @@ var app = {
         ApiAIPlugin.init(
             {
                 subscriptionKey: "6123ebe7185a4d9e94e441b7959cf2bc",
-                clientAccessToken: "4040f29a2bda474f873dedf16c637afb",
+                clientAccessToken: "43a7541fb0a94fae8f1bef406a2d9ca8",
                 lang: "ru",
                 debug: true
             },

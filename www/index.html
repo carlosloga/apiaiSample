@@ -116,13 +116,11 @@
                     var circle2 = document.getElementById("mycircle2");
                     var circle3 = document.getElementById("mycircle3");
 
-                    ApiAIPlugin.setListeningStartCallback(function () {
-                                                          alert(1);
+                    ApiAIPlugin.setListeningStartCallback(function () {                                           
                         parentElement.setAttribute('style', 'display:block;');
                     });
 
-                    ApiAIPlugin.setListeningFinishCallback(function () {
-                                                           alert(2);
+                    ApiAIPlugin.setListeningFinishCallback(function () {                       
                         parentElement.setAttribute('style', 'display:none;');
                     });
 
