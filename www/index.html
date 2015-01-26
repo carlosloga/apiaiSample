@@ -96,8 +96,8 @@
                     ApiAIPlugin.requestText({
                                                 query: "Hello"
                                             },
-                                            function (responce) {
-                                                alert(JSON.stringify(responce));
+                                            function (response) {
+                                                alert(JSON.stringify(response));
                                             },
                                             function (error) {
                                                 alert("Error!\n" + error);
@@ -140,11 +140,9 @@
                                                        console.log(transform);
                                                    });
 
-                    ApiAIPlugin.requestVoice({
-                                                lang:"en"
-                                             },
-                                            function (responce) {
-                                                alert(JSON.stringify(responce));
+                    ApiAIPlugin.requestVoice({},
+                                            function (response) {
+                                                alert(JSON.stringify(response));
                                             },
                                             function (error) {
                                                 parentElement.setAttribute('style', 'display:none;');
