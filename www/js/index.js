@@ -16,6 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -34,31 +35,13 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+    
+        storage = Storage.getInstance();
         
-        ApiAIPlugin.init(
-            {
-                subscriptionKey: "6123ebe7185a4d9e94e441b7959cf2bc",
-                clientAccessToken: "43a7541fb0a94fae8f1bef406a2d9ca8",
-                lang: "ru",
-                debug: true
-            },
-            function () {
-                alert("Init success");
-            },
-            function (error) {
-                alert("Init error\n" + error);
-            });
+        
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-//        var parentElement = document.getElementById(id);
-//        var listeningElement = parentElement.querySelector('.listening');
-//        var receivedElement = parentElement.querySelector('.received');
-//
-//        listeningElement.setAttribute('style', 'display:none;');
-//        receivedElement.setAttribute('style', 'display:block;');
-//
-//        console.log('Received Event: ' + id);
     }
 };
 

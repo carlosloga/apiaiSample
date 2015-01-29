@@ -25,6 +25,8 @@ DerivedData
 #
 # Pods/
 
+.DS_Store
+
 platforms
 plugins
 reinstall_plugin.sh

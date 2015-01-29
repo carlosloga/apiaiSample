@@ -1,31 +1,77 @@
 <!DOCTYPE html>
 <!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
-<html>
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+ -->
+<html lang="en" ng-app="app">
     <head>
         <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <link rel="stylesheet" type="text/css" href="css/main.css">
+        
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+                
+        <title>api.ai</title>
+
+        <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
+        <link rel="stylesheet" href="styles/app.css"/>
+        <link rel="stylesheet" href="styles/onsen-css-components-blue-basic-theme.css">
+            
+        <script src="lib/onsen/js/angular/angular.js"></script>
+        <script src="lib/onsen/js/onsenui.js"></script>
+        
+        <script type="text/javascript" src="js/storage.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+
+        <script>
+            ons.ready(function() {
+                      });
+            </script>
+        
+        <style>
+            .item {
+                padding: 10px;
+                line-height: 1;
+            }
+        .item-thum {
+            background-color: #ccc;
+            width: 50px;
+            height: 50px;
+            border-radius: 4px;
+        }
+        .item-title {
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .item-desc {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.3;
+            margin: 4px 0 0 0;
+            padding: 0 30px 0 0;
+        }
+        .item-label {
+            font-size: 12px;
+            color: #999;
+            float: right;
+        }
+        </style>
+        
         <style>
             .mycircle1{
                 border: 1px solid #414552;
@@ -55,56 +101,137 @@
                 margin-left: 13px;
             }
         </style>
-        <title>Hello World</title>
     </head>
-    <body style="background-color:#93C4FC;">
-        <div class="123" style="position:absolute; padding:20px 20px 20px 0px; margin-left:20px; text-align:center; width:300px;">
-            <h1>APIAI Sample</h1>
-            </br>
-            <input id="query" type="text" value="Hello" style="width: 100%; height: 40px; display: block; margin: 0;"></input>
-            </br>
-            <p><input type="button" style="width: 50%; height: 40px;" onclick="sendText();" value="Send Text"></p>
-            <p><input type="button" style="width: 50%; height: 40px;" onclick="stopListening();" value="Stop Listening"></p>
-            </br>
-            </br>
-
-            
-            <div class="mic-wrap" style="width: 164px; height: 164px; margin-left: auto; margin-right: auto;">
-                <div id="mic-animation-block" style="display:none;">
-                    <div id="mycircle1" class="mycircle1">
-                        <div id="mycircle2" class="mycircle2">
-                            <div id="mycircle3" class="mycircle3">
-                                
+    <body style="background-color:#93C4FC;" ng-controller="AppController">
+        
+        <ons-navigator>
+            <ons-page>
+                <ons-toolbar>
+                    <div class="center">Master Details</div>
+                </ons-toolbar>
+                
+                <ons-list ng-controller="MasterController">
+                    <ons-list-item modifier="chevron" class="item" ng-repeat="item in items" ng-click="showDetail($index)">
+                        <ons-row width="60px">
+                            <ons-col width="60px">
+                                <div class="item-thum"></div>
+                            </ons-col>
+                            <ons-col>
+                                <header>
+                                    <span class="item-title">{{item.title}}</span>
+                                </header>
+                            </ons-col>
+                        </ons-row>
+                    </ons-list-item>
+                </ons-list>
+            </ons-page>
+        </ons-navigator>
+        
+        <ons-template id="VoiceRequest.html">
+            <ons-page ng-controller="VoiceRequestController">
+                <ons-toolbar>
+                    <div class="left"><ons-back-button>Back</ons-back-button></div>
+                    <div class="center">Voice Request</div>
+                </ons-toolbar>
+                <table style="width:100%; height:100%;">
+                    <tr>
+                        <td style="vertical-align:middle;">
+                            <div style="text-align:center;">
+                            <div class="mic-wrap" style="width: 164px; height: 164px; margin-left: auto; margin-right: auto;">
+                                <div id="mic-animation-block" style="display:none;">
+                                    <div id="mycircle1" class="mycircle1">
+                                        <div id="mycircle2" class="mycircle2">
+                                            <div id="mycircle3" class="mycircle3">
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fa fa-microphone" style="font-size: 54px; margin-top:55px;" onclick="sendVoice();"></div>
                             </div>
-                        </div>
-                    </div>
-                </div>
+                            </div>
+                            <ons-button modifier="large" onclick="stopListening();">Stop Listening</ons-button>
+                        </td>
+                    </tr>
+                </table>
+            </ons-page>
+        </ons-template>
+        
+        <ons-template id="Settings.html">
+            <ons-page ng-controller="SettingsController">
+                
+                <ons-toolbar>
+                    <div class="left"><ons-back-button>Back</ons-back-button></div>
+                    <div class="center">Selected: {{selectedLanguage.title}}</div>
+                </ons-toolbar>
+                
+                <ons-list ng-controller="MasterController">
+                    <ons-list-item modifier="chevron" class="item" ng-repeat="language in languages" ng-click="clickLanguage($index)">
+                        <ons-row width="60px">
+                            <ons-col width="60px">
+                                <div class="item-thum"></div>
+                            </ons-col>
+                            <ons-col>
+                                <header>
+                                    <span class="item-title">{{language.title}}</span>
+                                </header>
+                            </ons-col>
+                        </ons-row>
+                    </ons-list-item>
+                </ons-list>
+                
+            </ons-page>
+        </ons-template>
+        
+        <ons-template id="TextRequest.html">
+            <ons-page ng-controller="TextRequestController">
+                
+                <ons-toolbar>
+                    <div class="left"><ons-back-button>Back</ons-back-button></div>
+                    <div class="center">Selected: {{selectedLanguage.title}}</div>
+                </ons-toolbar>
+                
+                <section style="padding: 8px">
+                    <input id="text" type="text" class="text-input" ng-model="text" placeholder="Type here" style="display: block; width: 100%">
+                    </br>
+                    <ons-button modifier="large" onclick="sendText();">Send</ons-button>
+                </section>
 
-                <div class="fa fa-microphone" style="font-size: 54px; margin-top:55px;" onclick="sendVoice();"></div>
-            </div>
-        </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+            </ons-page>
+        </ons-template>
+        
+        <ons-modal var="modal">
+            <ons-icon icon="ion-loading-c" spin="true"></ons-icon>
+            <br><br>
+            Please wait...
+        </ons-modal>
+        
         <script type="text/javascript">
-            
             function stopListening() {
                 ApiAIPlugin.stopListening();
             }
             
             function sendText() {
-                try {
+                var textField = document.getElementById("text");
+                
+                text = textField.value || "";
+                
+                if (text.length > 0) {
+                    
+                    modal.show();
                     ApiAIPlugin.requestText({
-                                                query: "Hello"
+                                                query: text,
                                             },
                                             function (response) {
+                                                modal.hide();
                                                 alert(JSON.stringify(response));
                                             },
                                             function (error) {
+                                                modal.hide();
                                                 alert("Error!\n" + error);
                                             });
-
-                } catch (e) {
-                    alert(e);
+                } else {
+                    alert("Query Can't Be Empty");
                 }
             }
         
