@@ -4,80 +4,80 @@ function StorageImpl() {
                var languages = [
                                   {
                                       title: 'English',
-                                      clientAccessToken: '92fa31b4e15c4ffca80dca2942deb6d3',
-                                      subscriptionKey: '6123ebe7185a4d9e94e441b7959cf2bc',
+                                      clientAccessToken: '327bf2eb54904e508362f6fb528ce00a',
+                                      subscriptionKey: '62f2522a-7404-4c28-b9ac-097ca5d8b32d',
                                       lang: 'en'
                                   },
                                   {
                                       title: 'Deutsch',
-                                      clientAccessToken: 'b3de3bd82cd54254bbe35fd25d1f81bc',
-                                      subscriptionKey: '6123ebe7185a4d9e94e441b7959cf2bc',
+                                      clientAccessToken: '96807aac0e98426eaf684f4081b7e431',
+                                      subscriptionKey: '62f2522a-7404-4c28-b9ac-097ca5d8b32d',
                                       lang: 'de'
                                   },
                                   {
                                       title: 'Español',
-                                      clientAccessToken: 'b64ea3877df54cd7a0adc7f3a97929da',
-                                      subscriptionKey: '6123ebe7185a4d9e94e441b7959cf2bc',
+                                      clientAccessToken: '430d461ea8e64c09a4459560353a5b1d',
+                                      subscriptionKey: '62f2522a-7404-4c28-b9ac-097ca5d8b32d',
                                       lang: 'es'
                                   },
                                   {
                                       title: 'Français',
-                                      clientAccessToken: '53c95265e618448f909b9562a7f2b29e',
-                                      subscriptionKey: '6123ebe7185a4d9e94e441b7959cf2bc',
+                                      clientAccessToken: 'd6434b3bf49d4a93a25679782619f39d',
+                                      subscriptionKey: '62f2522a-7404-4c28-b9ac-097ca5d8b32d',
                                       lang: 'fr'
                                   },
                                   {
                                       title: 'Italiano',
-                                      clientAccessToken: '700e909d22a344c7b405a5ca82e37d68',
-                                      subscriptionKey: '6123ebe7185a4d9e94e441b7959cf2bc',
+                                      clientAccessToken: '4319f7aa1765468194d9761432e4db36',
+                                      subscriptionKey: '62f2522a-7404-4c28-b9ac-097ca5d8b32d',
                                       lang: 'it'
                                   },
                                   {
                                       title: '日本語',
-                                      clientAccessToken: 'f36555bbfff7480ea6b26e4c6a370077',
-                                      subscriptionKey: '6123ebe7185a4d9e94e441b7959cf2bc',
+                                      clientAccessToken: '6cab6813dc8c416f92c3c2e2b4a7bc27',
+                                      subscriptionKey: '62f2522a-7404-4c28-b9ac-097ca5d8b32d',
                                       lang: 'ja'
                                   },
                                   {
                                       title: '한국의',
-                                      clientAccessToken: '27865280e7fd436b8523938f40fc5b9d',
-                                      subscriptionKey: '6123ebe7185a4d9e94e441b7959cf2bc',
+                                      clientAccessToken: 'b0219c024ee848eaa7cfb17dceb9934a',
+                                      subscriptionKey: '62f2522a-7404-4c28-b9ac-097ca5d8b32d',
                                       lang: 'ko'
                                   },
                                   {
                                       title: 'Português (Portugal)',
-                                      clientAccessToken: '3f71440584844f048bad712daf9e19de',
-                                      subscriptionKey: '6123ebe7185a4d9e94e441b7959cf2bc',
+                                      clientAccessToken: '4c4a2277516041f6a1c909163ebfed39',
+                                      subscriptionKey: '62f2522a-7404-4c28-b9ac-097ca5d8b32d',
                                       lang: 'pt-PT'
                                   },
                                   {
                                       title: 'Português (Brasil)',
-                                      clientAccessToken: '1d093587fc4f48c5a3529c6fb48c3291',
-                                      subscriptionKey: '6123ebe7185a4d9e94e441b7959cf2bc',
+                                      clientAccessToken: '6076377eea9e4291854204795b55eee9',
+                                      subscriptionKey: '62f2522a-7404-4c28-b9ac-097ca5d8b32d',
                                       lang: 'pt-BR'
                                   },
                                   {
                                       title: 'Русский',
-                                      clientAccessToken: 'bb93d0b7620141c98cd305fbaf989481',
-                                      subscriptionKey: '6123ebe7185a4d9e94e441b7959cf2bc',
+                                      clientAccessToken: 'adcb900f02594f4186420c082e44173e',
+                                      subscriptionKey: '62f2522a-7404-4c28-b9ac-097ca5d8b32d',
                                       lang: 'ru'
                                   },
                                   {
                                       title: '中文（简体)',
-                                      clientAccessToken: '2feb604b0f59447db2f64a2c8a7c271d',
-                                      subscriptionKey: '6123ebe7185a4d9e94e441b7959cf2bc',
+                                      clientAccessToken: '2b575c06deb246d2abe4bf769eb3200b',
+                                      subscriptionKey: '62f2522a-7404-4c28-b9ac-097ca5d8b32d',
                                       lang: 'zh-Hans'
                                   },
                                   {
                                       title: '中文（廣東話)',
-                                      clientAccessToken: 'e0caf8e54b1041bc8955e44e69304026',
-                                      subscriptionKey: '6123ebe7185a4d9e94e441b7959cf2bc',
+                                      clientAccessToken: '00ef32d3e35f43178405c046a16f3843',
+                                      subscriptionKey: '62f2522a-7404-4c28-b9ac-097ca5d8b32d',
                                       lang: 'zh-Hant-HK'
                                   },
                                   {
                                       title: '中文（繁體)',
-                                      clientAccessToken: 'b0df697344d142f4a1597250741d0ed8',
-                                      subscriptionKey: '6123ebe7185a4d9e94e441b7959cf2bc',
+                                      clientAccessToken: 'dd7ebc8a02974155aeffec26b21b55cf',
+                                      subscriptionKey: '62f2522a-7404-4c28-b9ac-097ca5d8b32d',
                                       lang: 'zh-Hant-TW'
                                   }
                                   ];
@@ -96,17 +96,17 @@ StorageImpl.prototype.setSelectedLanguage = function setSelectedLanguage(value)
     try {
         ApiAIPlugin.init(
                          {
-                         subscriptionKey: value.subscriptionKey,
-                         clientAccessToken: value.clientAccessToken,
-                         lang: value.lang,
-                         debug: true,
-                         baseURL: "https://dev.api.ai/api/",
+                           subscriptionKey: value.subscriptionKey,
+                           clientAccessToken: value.clientAccessToken,
+                           lang: value.lang,
+                           debug: false,
+                           baseURL: "https://api.api.ai/v1/",
                          },
                          function () {
-                         alert("Init success");
+                          alert("Init success");
                          },
                          function (error) {
-                         alert("Init error\n" + error);
+                          alert("Init error\n" + error);
                          });
     } catch (e) {
         alert(e);
