@@ -48,7 +48,7 @@ function StorageImpl() {
                                       title: 'Português (Portugal)',
                                       clientAccessToken: '3f71440584844f048bad712daf9e19de',
                                       subscriptionKey: '6123ebe7185a4d9e94e441b7959cf2bc',
-                                      lang: 'pt-PT'
+                                      lang: 'pt'
                                   },
                                   {
                                       title: 'Português (Brasil)',
@@ -66,19 +66,19 @@ function StorageImpl() {
                                       title: '中文（简体)',
                                       clientAccessToken: '2feb604b0f59447db2f64a2c8a7c271d',
                                       subscriptionKey: '6123ebe7185a4d9e94e441b7959cf2bc',
-                                      lang: 'zh-Hans'
+                                      lang: 'zh-CN'
                                   },
                                   {
                                       title: '中文（廣東話)',
                                       clientAccessToken: 'e0caf8e54b1041bc8955e44e69304026',
                                       subscriptionKey: '6123ebe7185a4d9e94e441b7959cf2bc',
-                                      lang: 'zh-Hant-HK'
+                                      lang: 'zh-HK'
                                   },
                                   {
                                       title: '中文（繁體)',
                                       clientAccessToken: 'b0df697344d142f4a1597250741d0ed8',
                                       subscriptionKey: '6123ebe7185a4d9e94e441b7959cf2bc',
-                                      lang: 'zh-Hant-TW'
+                                      lang: 'zh-TW'
                                   }
                                   ];
     this.languages = languages;
@@ -100,13 +100,13 @@ StorageImpl.prototype.setSelectedLanguage = function setSelectedLanguage(value)
                          clientAccessToken: value.clientAccessToken,
                          lang: value.lang,
                          debug: true,
-                         baseURL: "https://dev.api.ai/api/",
+                         baseURL: "https://api.api.ai/api/",
                          },
                          function () {
-                         alert("Init success");
+                            alert("Init success");
                          },
                          function (error) {
-                         alert("Init error\n" + error);
+                            alert("Init error\n" + error);
                          });
     } catch (e) {
         alert(e);
