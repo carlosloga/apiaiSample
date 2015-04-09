@@ -99,8 +99,8 @@ StorageImpl.prototype.setSelectedLanguage = function setSelectedLanguage(value)
                          subscriptionKey: value.subscriptionKey,
                          clientAccessToken: value.clientAccessToken,
                          lang: value.lang,
-                         debug: true,
                          baseURL: "https://api.api.ai/api/",
+                         version: "20150204"
                          },
                          function () {
                             alert("Init success");
