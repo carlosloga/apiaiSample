@@ -221,6 +221,26 @@
                     modal.show();
                     ApiAIPlugin.requestText({
                                                 query: text,
+                                                entities: [
+                                                  {
+                                                    name: "roomObjects",
+                                                    entries: [
+                                                      {
+                                                        value: "lamo1",
+                                                        synonyms: [
+                                                          "lamp",
+                                                          "living room lamp"
+                                                        ]
+                                                      },
+                                                      {
+                                                        value: "lamp2",
+                                                        synonyms: [
+                                                          "kitchen lamp"
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
                                             },
                                             function (response) {
                                                 modal.hide();
@@ -267,7 +287,28 @@
                                                        console.log(transform);
                                                    });
 
-                    ApiAIPlugin.requestVoice({},
+                    ApiAIPlugin.requestVoice({
+                                                entities: [
+                                                  {
+                                                    name: "roomObjects",
+                                                    entries: [
+                                                      {
+                                                        value: "lamo1",
+                                                        synonyms: [
+                                                          "lamp",
+                                                          "living room lamp"
+                                                        ]
+                                                      },
+                                                      {
+                                                        value: "lamp2",
+                                                        synonyms: [
+                                                          "kitchen lamp"
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                             },
                                             function (response) {
                                                 alert(JSON.stringify(response));
                                             },
