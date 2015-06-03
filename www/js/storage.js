@@ -4,8 +4,8 @@ function StorageImpl() {
                var languages = [
                                   {
                                       title: 'English',
-                                      clientAccessToken: '327bf2eb54904e508362f6fb528ce00a',
-                                      subscriptionKey: '62f2522a-7404-4c28-b9ac-097ca5d8b32d',
+                                      clientAccessToken: '3485a96fb27744db83e78b8c4bc9e7b7',
+                                      subscriptionKey: 'cb9693af-85ce-4fbf-844a-5563722fc27f',
                                       lang: 'en'
                                   },
                                   {
