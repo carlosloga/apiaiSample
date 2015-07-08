@@ -10,5 +10,6 @@
         Apache Cordova Team
     </author>
     <content src="index.html" />
+   <!--  <content src="cdvtests/index.html" /> -->
     <access origin="*" />
 </widget>
