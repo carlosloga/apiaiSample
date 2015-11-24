@@ -30,3 +30,5 @@ DerivedData
 platforms
 plugins
 reinstall_plugin.sh
+.idea
+node_modules
