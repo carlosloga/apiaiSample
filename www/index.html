@@ -272,6 +272,10 @@
                         parentElement.setAttribute('style', 'display:none;');
                     });
 
+                    ApiAIPlugin.setRecognitionResultsCallback(function (results) {
+                        console.log(results);
+                    });
+
                     ApiAIPlugin.levelMeterCallback(function(level){
                                                 
                                                        transform = "scale3d(" + (level + 1.0) + ", " + (level + 1.0) + ", " + (level + 1.0) + ")";
@@ -284,8 +288,6 @@
                                                        
                                                        circle3.style.transform = transform;
                                                        circle3.style.webkitTransform = transform;
-                                                       
-                                                       console.log(transform);
                                                    });
 
                     ApiAIPlugin.requestVoice({
