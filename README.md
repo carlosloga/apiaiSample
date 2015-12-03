@@ -9,4 +9,13 @@ cordova plugin add cordova-plugin-apiai
 ```
 to install API.AI plugin to project.
 
+Start application with 
+```
+cordova run android
+```
+or 
+```
+cordova run ios
+```
+
 Plugin sources [here](https://github.com/api-ai/api-ai-cordova)
