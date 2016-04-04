@@ -220,28 +220,7 @@
                     
                     modal.show();
                     ApiAIPlugin.requestText({
-                                                query: text,
-                                                entities: [
-                                                  {
-                                                    name: "dwarfs",
-                                                    entries: [
-                                                      {
-                                                        value: "Ori",
-                                                        synonyms: [
-                                                          "ori",
-                                                          "Nori"
-                                                        ]
-                                                      },
-                                                      {
-                                                        value: "bifur",
-                                                        synonyms: [
-                                                          "Bofur",
-                                                          "Bombur"
-                                                        ]
-                                                      }
-                                                    ]
-                                                  }
-                                                ]
+                                                query: text
                                             },
                                             function (response) {
                                                 modal.hide();
@@ -272,7 +251,7 @@
                         parentElement.setAttribute('style', 'display:none;');
                     });
 
-                    ApiAIPlugin.setRecognitionResultsCallback(function (results) {
+                    ApiAIPlugin.setPartialResultsCallback(function (results) {
                         console.log(results);
                     });
 
@@ -290,29 +269,7 @@
                                                        circle3.style.webkitTransform = transform;
                                                    });
 
-                    ApiAIPlugin.requestVoice({
-                                                entities: [
-                                                  {
-                                                    name: "dwarfs",
-                                                    entries: [
-                                                      {
-                                                        value: "Ori",
-                                                        synonyms: [
-                                                          "ori",
-                                                          "Nori"
-                                                        ]
-                                                      },
-                                                      {
-                                                        value: "bifur",
-                                                        synonyms: [
-                                                          "Bofur",
-                                                          "Bombur"
-                                                        ]
-                                                      }
-                                                    ]
-                                                  }
-                                                ]
-                                             },
+                    ApiAIPlugin.requestVoice({},
                                             function (response) {
                                                 alert(JSON.stringify(response));
                                             },
