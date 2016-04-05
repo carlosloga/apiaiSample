@@ -81,7 +81,6 @@ StorageImpl.prototype.setSelectedLanguage = function setSelectedLanguage(value) 
     try {
         ApiAIPlugin.init(
             {
-                subscriptionKey: "deprecated",
                 clientAccessToken: value.clientAccessToken,
                 lang: value.lang
             },
