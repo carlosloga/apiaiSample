@@ -4,7 +4,7 @@ function StorageImpl() {
     var languages = [
         {
             title: 'English',
-            clientAccessToken: '3485a96fb27744db83e78b8c4bc9e7b7',
+            clientAccessToken: '09604c7f91ce4cd8a4ede55eb5340b9d',
             lang: 'en'
         },
         {

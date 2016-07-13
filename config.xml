@@ -2,7 +2,7 @@
 <widget id="com.api.ai.ApiAIPhoneGapSDK" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>ApiAIPhoneGapSDK</name>
     <preference name="DisallowOverscroll" value="true" />
-    <icon src="www/img/logo.png" />
+<!--    <icon src="www/img/logo.png" />-->
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
     </description>
