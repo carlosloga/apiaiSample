@@ -7,9 +7,9 @@
  to you under the Apache License, Version 2.0 (the
  "License"); you may not use this file except in compliance
  with the License.  You may obtain a copy of the License at
- 
+
  http://www.apache.org/licenses/LICENSE-2.0
- 
+
  Unless required by applicable law or agreed to in writing,
  software distributed under the License is distributed on an
  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
@@ -20,19 +20,19 @@
 <html lang="en" ng-app="app">
     <head>
         <meta charset="utf-8" />
-        
+
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
-                
+
         <title>api.ai</title>
 
         <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
         <link rel="stylesheet" href="styles/app.css"/>
         <link rel="stylesheet" href="styles/onsen-css-components-blue-basic-theme.css">
-            
+
         <script src="lib/onsen/js/angular/angular.js"></script>
         <script src="lib/onsen/js/onsenui.js"></script>
-        
+
         <script type="text/javascript" src="js/storage.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
@@ -42,7 +42,7 @@
             ons.ready(function() {
                       });
             </script>
-        
+
         <style>
             .item {
                 padding: 10px;
@@ -71,7 +71,7 @@
             float: right;
         }
         </style>
-        
+
         <style>
             .mycircle1{
                 border: 1px solid #414552;
@@ -96,20 +96,20 @@
                 height: 108px;
                 border-radius: 50%;
                 position: absolute;
-                
+
                 margin-top: 13px;
                 margin-left: 13px;
             }
         </style>
     </head>
     <body style="background-color:#93C4FC;" ng-controller="AppController">
-        
+
         <ons-navigator>
             <ons-page>
                 <ons-toolbar>
                     <div class="center">Master Details</div>
                 </ons-toolbar>
-                
+
                 <ons-list ng-controller="MasterController">
                     <ons-list-item modifier="chevron" class="item" ng-repeat="item in items" ng-click="showDetail($index)">
                         <ons-row width="60px">
@@ -126,7 +126,7 @@
                 </ons-list>
             </ons-page>
         </ons-navigator>
-        
+
         <ons-template id="VoiceRequest.html">
             <ons-page ng-controller="VoiceRequestController">
                 <ons-toolbar>
@@ -142,7 +142,7 @@
                                     <div id="mycircle1" class="mycircle1">
                                         <div id="mycircle2" class="mycircle2">
                                             <div id="mycircle3" class="mycircle3">
-                                                
+
                                             </div>
                                         </div>
                                     </div>
@@ -156,15 +156,15 @@
                 </table>
             </ons-page>
         </ons-template>
-        
+
         <ons-template id="Settings.html">
             <ons-page ng-controller="SettingsController">
-                
+
                 <ons-toolbar>
                     <div class="left"><ons-back-button>Back</ons-back-button></div>
                     <div class="center">Selected: {{selectedLanguage.title}}</div>
                 </ons-toolbar>
-                
+
                 <ons-list ng-controller="MasterController">
                     <ons-list-item modifier="chevron" class="item" ng-repeat="language in languages" ng-click="clickLanguage($index)">
                         <ons-row width="60px">
@@ -179,18 +179,18 @@
                         </ons-row>
                     </ons-list-item>
                 </ons-list>
-                
+
             </ons-page>
         </ons-template>
-        
+
         <ons-template id="TextRequest.html">
             <ons-page ng-controller="TextRequestController">
-                
+
                 <ons-toolbar>
                     <div class="left"><ons-back-button>Back</ons-back-button></div>
                     <div class="center">Selected: {{selectedLanguage.title}}</div>
                 </ons-toolbar>
-                
+
                 <section style="padding: 8px">
                     <input id="text" type="text" class="text-input" ng-model="text" placeholder="Type here" style="display: block; width: 100%">
                     </br>
@@ -199,25 +199,25 @@
 
             </ons-page>
         </ons-template>
-        
+
         <ons-modal var="modal">
             <ons-icon icon="ion-loading-c" spin="true"></ons-icon>
             <br><br>
             Please wait...
         </ons-modal>
-        
+
         <script type="text/javascript">
             function stopListening() {
                 ApiAIPlugin.stopListening();
             }
-            
+
             function sendText() {
                 var textField = document.getElementById("text");
-                
+
                 text = textField.value || "";
-                
+
                 if (text.length > 0) {
-                    
+
                     modal.show();
                     ApiAIPlugin.requestText({
                                                 query: text
@@ -234,20 +234,20 @@
                     alert("Query Can't Be Empty");
                 }
             }
-        
+
             function sendVoice() {
                 try {
                     var parentElement = document.getElementById("mic-animation-block");
-                    
+
                     var circle1 = document.getElementById("mycircle1");
                     var circle2 = document.getElementById("mycircle2");
                     var circle3 = document.getElementById("mycircle3");
 
-                    ApiAIPlugin.setListeningStartCallback(function () {                                           
+                    ApiAIPlugin.setListeningStartCallback(function () {
                         parentElement.setAttribute('style', 'display:block;');
                     });
 
-                    ApiAIPlugin.setListeningFinishCallback(function () {                       
+                    ApiAIPlugin.setListeningFinishCallback(function () {
                         parentElement.setAttribute('style', 'display:none;');
                     });
 
@@ -256,28 +256,35 @@
                     });
 
                     ApiAIPlugin.levelMeterCallback(function(level){
-                                                
+
                                                        transform = "scale3d(" + (level + 1.0) + ", " + (level + 1.0) + ", " + (level + 1.0) + ")";
 
                                                        circle1.style.transform = transform;
                                                        circle1.style.webkitTransform = transform;
-                                                       
+
                                                        circle2.style.transform = transform;
                                                        circle2.style.webkitTransform = transform;
-                                                       
+
                                                        circle3.style.transform = transform;
                                                        circle3.style.webkitTransform = transform;
                                                    });
 
                     ApiAIPlugin.requestVoice({},
                                             function (response) {
-                                                alert(JSON.stringify(response));
+                                                text = response['result']['fulfillment']['speech']
+                                                TTS.speak({
+                                                    text: text,
+                                                    locale: 'en-US'
+                                                }, function () {},
+                                                function (reason) {});
+
+                                                console.log(JSON.stringify(response));
                                             },
                                             function (error) {
                                                 parentElement.setAttribute('style', 'display:none;');
                                                 alert("Error!\n" + error);
                                             });
-                                            
+
                 } catch (e) {
                     alert(e);
                 }
